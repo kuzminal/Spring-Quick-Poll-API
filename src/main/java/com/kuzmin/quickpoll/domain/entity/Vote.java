@@ -1,4 +1,4 @@
-package com.kuzmin.quickpoll.domain;
+package com.kuzmin.quickpoll.domain.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;

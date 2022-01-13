@@ -1,36 +1,33 @@
-package com.kuzmin.quickpoll.domain;
+package com.kuzmin.quickpoll.domain.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Poll {
+public class Option {
     @Id
     @GeneratedValue
-    @Column(name="POLL_ID")
+    @Column(name="OPTION_ID")
     private Long id;
-    @Column(name="QUESTION")
-    private String question;
-    @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="POLL_ID")
-    @OrderBy
-    @ToString.Exclude
-    private Set<Option> options;
+    @Column(name="OPTION_VALUE")
+    private String value;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Poll poll = (Poll) o;
-        return id != null && Objects.equals(id, poll.id);
+        Option option = (Option) o;
+        return id != null && Objects.equals(id, option.id);
     }
 
     @Override
