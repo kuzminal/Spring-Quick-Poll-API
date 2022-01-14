@@ -4,6 +4,12 @@ import com.kuzmin.quickpoll.domain.dto.OptionCount;
 import com.kuzmin.quickpoll.domain.dto.VoteResult;
 import com.kuzmin.quickpoll.domain.entity.Vote;
 import com.kuzmin.quickpoll.repository.VoteRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Tag(name = "result", description = "Compute Result API")
 public class ComputeResultController {
     private final VoteRepository voteRepository;
 

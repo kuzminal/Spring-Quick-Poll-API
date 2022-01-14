@@ -2,6 +2,7 @@ package com.kuzmin.quickpoll.controller;
 
 import com.kuzmin.quickpoll.domain.entity.Vote;
 import com.kuzmin.quickpoll.repository.VoteRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
+@Tag(name = "votes", description = "Vote API")
 public class VoteController {
     private final VoteRepository voteRepository;
 
